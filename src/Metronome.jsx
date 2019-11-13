@@ -97,7 +97,8 @@ export default class Metronome extends React.Component {
       <div
       style={{
         // this is where the transforms/rotations occur
-        transform: `rotateZ(${rotate * 0.5}deg) rotateX(${rotate * 0.4}deg) rotateY(${rotate * 0.4}deg)`
+        transform: `rotateZ(${rotate * 0.5}deg) rotateX(${rotate * 0.4}deg) rotateY(${rotate * 0.4}deg)`,
+        boxShadow: (`-5px -5px 180px 20px ${count % 2 === 0 ? 'red' : 'blue'}`)
       }}
       className="metronome">
         <label>measure</label>
@@ -123,7 +124,7 @@ export default class Metronome extends React.Component {
           className="knob"
           // this is where the transforms/rotations occur
           style={{
-            transform: `rotateZ(${rotate}deg) rotateX(${rotate}deg) rotateY(${rotate}deg)`
+            transform: `rotateZ(${rotate}deg) rotateX(${rotate}deg) rotateY(${rotate}deg)`,
           }}
           src={dial}
         />

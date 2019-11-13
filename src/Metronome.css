@@ -3,7 +3,6 @@ body {
 }
 
 .metronome {
-    /* box-shadow: black 10px 10px 10px -5px; */
     transition: all .5s;
     background-color: #8bd2d2;
     color: white;
