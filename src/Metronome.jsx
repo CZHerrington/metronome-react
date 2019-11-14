@@ -95,29 +95,33 @@ export default class Metronome extends React.Component {
   
     return (
       <div
-      style={{
-        // this is where the transforms/rotations occur
-        boxShadow: (`-5px -5px 180px 20px ${count % 2 === 0 ? 'red' : 'blue'}`)
-      }}
-      className="metronome">
-        <label>measure</label>
-        <input
-          value={beatsPerMeasure}
-          onChange={this.handleMeasureChange.bind(this)}  
-        />
-        <div className="bpm-slider">
-          <div>{bpm} BPM</div>
+        style={{
+          // this is where the transforms/rotations occur
+          boxShadow: (`0px 4px 20px 0px black, -5px -5px 180px 20px ${count % 2 === 0 ? 'red' : 'blue'}`),
+        }}
+        className="metronome"
+      >
+        <div className="controls">
+          <label>measure</label>
           <input
-            type="range"
-            min="60"
-            max="240"
-            value={bpm}
-            onChange={this.handleBpmChange.bind(this)}
-            />
+            className="measure"
+            value={beatsPerMeasure}
+            onChange={this.handleMeasureChange.bind(this)}  
+          />
+          <div className="bpm-slider">
+            <div>{bpm} BPM</div>
+            <input
+              type="range"
+              min="60"
+              max="240"
+              value={bpm}
+              onChange={this.handleBpmChange.bind(this)}
+              />
+          </div>
         </div>
         <button
           onClick={this.startStop}
-        >{`${count }` + buttonValue}</button>
+          >{`${count }` + buttonValue}</button>
         <img
           alt='knob'
           className="knob"
@@ -126,7 +130,8 @@ export default class Metronome extends React.Component {
             transform: `rotateZ(${rotate}deg)`,
           }}
           src={dial}
-        />
+          />
+    <hr></hr>
       </div>
     );
   }
