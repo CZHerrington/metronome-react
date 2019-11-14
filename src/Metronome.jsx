@@ -22,6 +22,7 @@ export default class Metronome extends React.Component {
     beatsPerMeasure: 4,
   }
 
+  // ui methods
   playClick = () => {
     const { count, beatsPerMeasure } = this.state;
     if (count % beatsPerMeasure === 0) {
@@ -84,8 +85,6 @@ export default class Metronome extends React.Component {
     } else {
       this.setState({bpm})
     }
-
-
   }
 
   render() {
@@ -93,11 +92,11 @@ export default class Metronome extends React.Component {
 // handleMeasureChange
   const buttonValue = playing ? '■' : '▶'
   const rotate = (count / beatsPerMeasure) * 360;
+  
     return (
       <div
       style={{
         // this is where the transforms/rotations occur
-        transform: `rotateZ(${rotate * 0.5}deg) rotateX(${rotate * 0.4}deg) rotateY(${rotate * 0.4}deg)`,
         boxShadow: (`-5px -5px 180px 20px ${count % 2 === 0 ? 'red' : 'blue'}`)
       }}
       className="metronome">
@@ -124,7 +123,7 @@ export default class Metronome extends React.Component {
           className="knob"
           // this is where the transforms/rotations occur
           style={{
-            transform: `rotateZ(${rotate}deg) rotateX(${rotate}deg) rotateY(${rotate}deg)`,
+            transform: `rotateZ(${rotate}deg)`,
           }}
           src={dial}
         />
